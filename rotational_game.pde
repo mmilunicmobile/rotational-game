@@ -74,6 +74,15 @@ class Player {
     xpos += xvel;
     ypos += yvel;
     xvel *= .85;
+    
+    hitbox[0] = xpos - 15;
+    hitbox[1] = ypos - 15;
+    hitbox[2] = xpos + 15;
+    hitbox[3] = ypos - 15;
+    hitbox[4] = xpos + 15;
+    hitbox[5] = ypos + 15;
+    hitbox[6] = xpos - 15;
+    hitbox[7] = ypos + 15;
   }
 }
 
