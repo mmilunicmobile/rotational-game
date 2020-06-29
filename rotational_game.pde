@@ -1,8 +1,9 @@
 //creating variables
-
 Player myPlayer;
 
 boolean W, A, S, D;
+
+
 
 void setup() {
   //initialization
@@ -12,6 +13,8 @@ void setup() {
   size(500,400, P2D);
 }
 
+
+
 void draw() {
   background(255);
   
@@ -20,6 +23,9 @@ void draw() {
   myPlayer.display();
 }
 
+
+
+//actually the player class
 class Player {
   //variables
   float xvel, yvel;
@@ -49,13 +55,12 @@ class Player {
     if (D == true) xvel += speed;
     
     yvel += 0.5;
-    
     xpos += xvel;
     ypos += yvel;
-    
     xvel *= .85;
   }
 }
+
 
 
 //key press detection setup
@@ -74,7 +79,10 @@ void keyReleased() {
 }
 
 
-//rectangle collision detection
+
+//rectangle intersection detection
+/* The rectIntersect requires the x coordinate and y coordinate of all four points in a rectangle for both rectangles.
+returns true for they are intercecting and false if not*/
 boolean rectIntersect(float AURx, float AURy, float ALRx, float ALRy, float ALLx, float ALLy, float AULx, float AULy, float BURx, float BURy, float BLRx, float BLRy, float BLLx, float BLLy, float BULx, float BULy) {
   float[] axisx = new float[4];
   float[] axisy = new float[4];
